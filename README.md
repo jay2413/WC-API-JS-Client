@@ -16,7 +16,7 @@ app.controller('myCtrl', function($scope, WC){
   
   Woocommerce.get('products', function(err, data, res){
     if(res){
-      console.log(res);
+      console.log(JSON.parse(res));
     } else if(err){
       console.log(err);
     }
