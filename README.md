@@ -14,10 +14,12 @@ Inject the `WP` service in your controllers.
 app.controller('myCtrl', function($scope, WP){
   var Woocommerce = WP.WP();
   
-  Woocommerce.get('products/categories', function(err, data, res){
-    if(err)
+  Woocommerce.get('products', function(err, data, res){
+    if(res){
+      console.log(res);
+    } else if(err){
       console.log(err);
-    console.log(JSON.parse(res));
+    }
   })
 });
 ```
